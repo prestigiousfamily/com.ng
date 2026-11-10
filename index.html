@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRESTIGIOUS FAMILY ASSOCIATION</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="topBar"><div class="logo"></div><div><h1>PRESTIGIOUS FAMILY ASSOCIATION</h1><p>Together We Grow, Together We Help</p></div><div class="topRight"><span id="topUser">Guest</span><br><small id="clock"></small></div></div>
+<nav id="mainNav">
+<button data-page="home" class="active">HOME</button>
+<button data-page="reg">NEW REGISTRATION</button>
+<button data-page="memberLogin">MEMBERSHIP LOGGIN</button>
+<button data-page="meeting">ONLINE MEETING</button>
+<button data-page="electionLogin">ELECTION</button>
+<button data-page="executives">EXECUTIVES</button>
+<button data-page="constitution">CONSTITUTION</button>
+<button data-page="adminLogin">ADMINISTRATION</button>
+</nav>
+</header>
+<main>
+<section id="home" class="page active">
+<div class="hero"><h2>Welcome to Prestigious Family Association</h2><p>A united family where no member suffers alone, and the community keeps developing.</p><div class="stats"><div><b id="sMembers">0</b><span>Total Members</span></div></div></div>
+<div class="grid3"><div class="card"><h3>STANDARD - ₦10,000 / month</h3><p>Annual ₦120,000 - Welfare Return ₦100,000</p></div><div class="card gold"><h3>GOLD - ₦25,000 / month</h3><p>Annual ₦300,000 - Welfare Return ₦250,000</p></div><div class="card gold2"><h3>PLATINUM - ₦50,000 / month</h3><p>Annual ₦600,000 - Welfare Return ₦500,000</p></div></div>
+<div class="card"><h3>How It Works</h3><p>1. Register → 2. Pay ₦2,000 Registration → 3. Chairman Approves → 4. Admin Activates Your PFA Number → 5. Login & Contribute Monthly</p><button class="btnGold" onclick="go('reg')">REGISTER NOW</button></div>
+</section>
+
+<section id="reg" class="page"><div class="card"><h2>NEW REGISTRATION</h2><p>Registration Fee: <b>₦2,000</b></p>
+<input id="rName" placeholder="NAME *"><input id="rAddress" placeholder="ADDRESS *"><input id="rEmail" placeholder="EMAIL *"><input id="rWork" placeholder="WORK ADDRESS (if any)"><select id="rTier"><option value="STANDARD">STANDARD - ₦10,000 / month</option><option value="GOLD">GOLD - ₦25,000 / month</option><option value="PLATINUM">PLATINUM - ₦50,000 / month</option></select><input id="rPhone" placeholder="PHONE NUMBER *"><input id="rDate" type="date"><input id="rWhats" placeholder="WHATSAPP NUMBER *">
+<button class="btnGold full" onclick="submitReg()">SUBMIT FORM</button><div id="regResult"></div></div></section>
+
+<section id="memberLogin" class="page"><div class="card"><h2>MEMBERSHIP LOGGIN</h2><input id="mName" placeholder="NAME *"><input id="mNum" placeholder="MEMBERSHIP NUMBER e.g PFA0001 *"><input id="mPass" type="password" placeholder="PASSWORD - Default admin123"><button class="btnGold full" onclick="memberLogin()">ENTER</button></div><div id="memberDash"></div></section>
+
+<section id="electionLogin" class="page"><div class="card"><h2>ELECTION - MEMBER LOGIN</h2><input id="eName" placeholder="NAME *"><input id="eNum" placeholder="MEMBERSHIP NUMBER e.g PFA0001 *"><input id="ePass" type="password" placeholder="PASSWORD - Default admin123"><button class="btnGold full" onclick="electionLogin()">ENTER</button></div><div id="electionDash"></div></section>
+
+<section id="executives" class="page"><div class="card"><h2>EXECUTIVES</h2><p>Click your office to login. Default Office Password: <b>admin123</b></p><div class="grid3">
+<button class="execBtn" onclick="openExecLogin('CHAIRMAN')">CHAIRMAN</button><button class="execBtn" onclick="openExecLogin('VICE CHAIRMAN')">VICE CHAIRMAN</button><button class="execBtn" onclick="openExecLogin('TREASURER')">TREASURER</button><button class="execBtn" onclick="openExecLogin('FINANCIAL SECRETARY')">FINANCIAL SECRETARY</button><button class="execBtn" onclick="openExecLogin('AUDITOR')">AUDITOR</button>
+</div></div><div id="execLoginBox"></div><div id="execDash"></div></section>
+
+<section id="constitution" class="page"><div class="card"><h2>CONSTITUTION OF PRESTIGIOUS FAMILY ASSOCIATION</h2><p><b>:</b> PREAMBLE<br>
+
+We, the members of PRESTIGIOUS FAMILY, united by love, trust, unity and a common desire for collective growth, do hereby make, adopt and give to ourselves this Constitution for the good governance, welfare and development of our Association and our Community.<br>
+
+MOTTO:  Together We Grow, Together We Help_
+
+VISION:  A united family where no member suffers alone, and the community keeps developing.
+
+MISSION:  To collect monthly contributions from members, manage them transparently, and use them to support members and develop the community.
+</p><div id="constText"></div><button class="btnDark" onclick="window.print()">PRINT / DOWNLOAD AS PDF</button></div></section>
+
+<section id="adminLogin" class="page"><div class="card"><h2>ADMINISTRATION</h2><input id="aName" placeholder="NAME *"><input id="aNum" placeholder="MEMBERSHIP NUMBER *"><input id="aPass" type="password" placeholder="PASSWORD - Default admin123"><button class="btnGold full" onclick="adminLogin()">ENTER</button></div><div id="adminDash"></div></section>
+
+<section id="dynamic" class="page"><div id="dynamicBox"></div><button class="btnLight" onclick="goBack()">← BACK</button></section>
+</main>
+<footer><p>© 2026 PRESTIGIOUS FAMILY ASSOCIATION - Together We Grow, Together We Help</p></footer>
+<div id="loanModal" class="modal"><div class="modalBox"><h3>APPLY FOR LOAN</h3><input id="lNum" placeholder="MEMBERSHIP NUMBER *"><select id="lType"><option value="Business Support">Business Support - ₦50,000 to ₦150,000</option><option value="Emergency Loan">Emergency Loan - Up to ₦50,000</option></select><input id="lAmt" type="number" placeholder="AMOUNT REQUESTED *"><input id="lReason" placeholder="REASON *"><button class="btnGold full" onclick="submitLoan()">SUBMIT LOAN APPLICATION</button><button class="btnLight full" onclick="hideModals()">CLOSE</button></div></div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
